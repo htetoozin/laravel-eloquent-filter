@@ -13,13 +13,43 @@ composer require htetoozin/eloquent-filter
 
 ## Usage
 
-Run php artisan make:filter {name} this will generate you a new file in `app/Filters` folders. eg..
+
+Run php artisan make:filter {name} this file generate and stored at the location of app/Filters/. eg..
 
 ```
 php artisan make:filter UserFilter
 ```
+will generate such file content of UserFilter.php 
 
-1- Add local query scope in model.
+[!NOTE]  
+array value and method name must be same. eg.. keywords
+
+```php
+<?php
+
+namespace App\Filters;
+
+use HtetOoZin\EloquentFilter\Filters\Filter;
+
+class UserFilter extends Filter
+{
+    /**
+     * Register filter properties
+     */
+    protected $filters = ['keyword'];
+
+
+    /**
+     * Filter by keyword.
+     */
+    public function keyword($value)
+    {
+        return $this->builder->where('name', 'like', "%{$value}%");
+    }
+}
+```
+
+Add local query scope in related model.
 
 ```php
 
@@ -33,7 +63,7 @@ class User extends Model
     }
 }
 ```
-2- Import UserFilter class to related controller.
+Import UserFilter class to related controller.
 ```php
 
 <?php
