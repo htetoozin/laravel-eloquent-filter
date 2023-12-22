@@ -3,8 +3,7 @@
 
 ## :inbox_tray: Installation
 
-
-Require the package using composer:
+You can install this package via composer using this command:
 
 ```
 
@@ -20,7 +19,7 @@ Run php artisan make:filter {name} this will generate you a new file in `app/Fil
 php artisan make:filter UserFilter
 ```
 
-Add local query scope in model.
+1- Add local query scope in model.
 
 ```php
 
@@ -34,7 +33,7 @@ class User extends Model
     }
 }
 ```
-And fitler class in your conroller. 
+2- Import UserFilter class to related controller.
 ```php
 
 <?php
