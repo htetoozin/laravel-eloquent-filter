@@ -1,0 +1,34 @@
+{
+    "name": "htetoozin/eloquent-filter",
+    "description": "Laravel Eloquent Filter",
+     "keywords": [
+        "laravel",
+        "eloquent",
+        "filter"
+    ],
+    "homepage": "https://github.com/htetoozin/laravel-eloquent-filter",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "htetoozin",
+            "email": "htetoo.zin09@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+    },
+     "autoload": {
+        "psr-4": {
+            "HtetOoZin\\EloquentFilter\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "HtetOoZin\\EloquentFilter\\EloquentServiceProvider"
+            ]
+        }  
+    }
+}

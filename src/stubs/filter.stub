@@ -1,0 +1,22 @@
+<?php
+
+namespace {{ namespace }};
+
+use HtetOoZin\EloquentFilter\Filters\Filter;
+
+class {{ class }} extends Filter
+{
+    /**
+     * Register filter properties
+     */
+    protected $filters = ['keyword'];
+
+
+    /**
+     * Filter by keyword.
+     */
+    public function keyword($value)
+    {
+        return $this->builder->where('name', 'like', "%{$value}%");
+    }
+}
