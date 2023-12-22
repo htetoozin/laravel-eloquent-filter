@@ -21,8 +21,8 @@ php artisan make:filter UserFilter
 ```
 will generate such file content of UserFilter.php 
 
-[!NOTE]  
-array value and method name must be same. eg.. keywords
+> [!IMPORTANT]  
+> Array value and the method name must be the same; otherwise, the filter will not work.
 
 ```php
 <?php
